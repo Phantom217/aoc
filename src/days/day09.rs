@@ -153,13 +153,10 @@ mod test {
     #[test]
     fn correct_solution() {
         let input = include_str!("../../input/day09.txt");
-        let numbers = input
-            .lines()
-            .map(|n| n.parse::<usize>().expect("Invalid number"))
-            .collect::<Vec<usize>>();
+        let solver = super::Solver::new();
 
-        let expected = 556543474;
-        let actual = find_anomaly(&numbers, 25);
+        let expected: Solution = (556543474, 76096372).into();
+        let actual = solver.solve(input);
 
         assert_eq!(actual, expected)
     }
