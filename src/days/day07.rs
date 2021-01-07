@@ -120,10 +120,6 @@ impl<'r> Rule<'r> {
     pub fn get_key(&self) -> String {
         self.container.into()
     }
-
-    pub fn holds_bag(&self, bag: &str) -> bool {
-        self.contents.contains_key(bag)
-    }
 }
 
 impl<'r> std::convert::From<&'r str> for Rule<'r> {
