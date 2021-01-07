@@ -1,3 +1,4 @@
+#![feature(array_windows)]
 use std::path::Path;
 
 use anyhow::{bail, ensure, Context};
