@@ -79,10 +79,7 @@ fn validate(field: &str, value: &str) -> bool {
             Some("#") => value[1..].chars().all(|c| c.is_ascii_hexdigit()),
             _ => false,
         },
-        "ecl" => match value {
-            "amb" | "blu" | "brn" | "gry" | "grn" | "hzl" | "oth" => true,
-            _ => false,
-        },
+        "ecl" => matches!(value, "amb" | "blu" | "brn" | "gry" | "grn" | "hzl" | "oth"),
         "pid" => validate_number(value, 9, None),
         _ => false,
     }

@@ -20,7 +20,10 @@ impl crate::Solver for Solver {
     fn solve(&self, input: &str) -> Solution {
         let input: Vec<usize> = input
             .lines()
-            .map(|i| i.parse::<usize>().expect(&format!("Invalid number: {}", i)))
+            .map(|i| {
+                i.parse::<usize>()
+                    .unwrap_or_else(|_| panic!("Invalid number: {}", i))
+            })
             .collect();
 
         let part1 = find_anomaly(&input, 25);
@@ -90,8 +93,7 @@ fn find_contiguous_sum(numbers: Vec<usize>, num: usize) -> usize {
     let mut min = usize::MAX;
     let mut max = 0;
 
-    for i in start..=end {
-        let n = numbers[i];
+    for &n in numbers.iter().take(end + 1).skip(start) {
         min = min.min(n);
         max = max.max(n);
     }

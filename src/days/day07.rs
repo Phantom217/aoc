@@ -52,7 +52,7 @@ impl<'r> Bags<'r> {
     pub fn reverse_bag_count(&self, search_key: &str) -> usize {
         let mut count = 0;
 
-        for (_, parent_bag) in &self.bags {
+        for parent_bag in self.bags.values() {
             match self.recursive_bag_count(&parent_bag, search_key) {
                 0 => {}
                 _ => count += 1,
@@ -68,10 +68,8 @@ impl<'r> Bags<'r> {
         for (child_key, child_count) in bag.contents.iter() {
             if search_key == child_key {
                 count += child_count;
-            } else {
-                if let Some(c) = self.bags.get(child_key) {
-                    count += self.recursive_bag_count(&c, search_key);
-                }
+            } else if let Some(c) = self.bags.get(child_key) {
+                count += self.recursive_bag_count(&c, search_key);
             }
         }
 
@@ -100,8 +98,7 @@ impl<'r> std::convert::From<Vec<Rule<'r>>> for Bags<'r> {
         let mut bags = Bags::new();
 
         for rule in rules {
-            let bag = Rule::from(rule);
-            if let Some(b) = bags.add_bag(bag) {
+            if let Some(b) = bags.add_bag(rule) {
                 panic!("There's a duplicate parent rule: {:?}", b);
             };
         }
@@ -133,7 +130,7 @@ impl<'r> std::convert::From<&'r str> for Rule<'r> {
             contents = HashMap::new()
         } else {
             contents = contents_str
-                .split(",")
+                .split(',')
                 .map(|s| {
                     let mut words = s.split_whitespace();
                     let num: usize = words.next().unwrap().parse().unwrap();

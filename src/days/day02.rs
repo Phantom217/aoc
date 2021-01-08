@@ -24,13 +24,13 @@ impl crate::Solver for Solver {
 }
 
 fn part1(input: &str) -> usize {
-    let pr = parse_password_rules(input).unwrap();
+    let pr = parse_password_rules(input);
 
     pr.iter().filter(|entry| entry.is_valid_part1()).count()
 }
 
 fn part2(input: &str) -> usize {
-    let pr = parse_password_rules(input).unwrap();
+    let pr = parse_password_rules(input);
 
     pr.iter().filter(|entry| entry.is_valid_part2()).count()
 }
@@ -77,7 +77,7 @@ impl std::convert::From<&str> for PasswordRules {
 }
 
 /// Parse input into a Vec of PasswordRules
-fn parse_password_rules(input: &str) -> Result<Vec<PasswordRules>, String> {
+fn parse_password_rules(input: &str) -> Vec<PasswordRules> {
     // TODO: make more efficient
     let mut pr_vec = Vec::new();
 
@@ -85,7 +85,7 @@ fn parse_password_rules(input: &str) -> Result<Vec<PasswordRules>, String> {
         pr_vec.push(PasswordRules::from(line));
     }
 
-    Ok(pr_vec)
+    pr_vec
 }
 
 #[cfg(test)]
