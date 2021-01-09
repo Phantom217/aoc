@@ -40,7 +40,7 @@ macro_rules! impl_from {
     };
 }
 
-impl_from!(usize, u32, i32);
+impl_from!(usize, isize, u32, i32);
 
 #[cfg(test)]
 mod test {
