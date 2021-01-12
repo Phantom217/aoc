@@ -28,6 +28,16 @@ impl fmt::Debug for Solution {
 }
 
 macro_rules! impl_from {
+    ($(($t:ty,$tt:ty)),+) => {
+        $(impl std::convert::From<($t, $tt)> for Solution {
+            fn from(parts: ($t, $tt)) -> Self {
+                Self {
+                    part1: parts.0.to_string(),
+                    part2: parts.1.to_string(),
+                }
+            }
+        })*
+    };
     ($($t:ty),+) => {
         $(impl std::convert::From<($t, $t)> for Solution {
             fn from(parts: ($t, $t)) -> Self {
@@ -40,7 +50,8 @@ macro_rules! impl_from {
     };
 }
 
-impl_from!(usize, isize, u64, u32, i32);
+impl_from!(usize, isize, u64, u32, i32, u16);
+impl_from!((u16, u64));
 
 #[cfg(test)]
 mod test {
