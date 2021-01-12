@@ -219,7 +219,7 @@ dotted black bags contain no other bags.";
     }
 
     #[test]
-    fn correct_solutions() {
+    fn verify() {
         let solver = super::Solver::new();
         let input = include_str!("../../input/day07.txt");
 

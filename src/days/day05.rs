@@ -86,26 +86,26 @@ mod test {
 
     #[test]
     fn test_seat_location() {
-        let seat = Seat::from("FBFBBFFRLR");
+        let expected = Seat::from("FBFBBFFRLR");
         let actual = Seat { row: 44, col: 5 };
-        assert_eq!(seat, actual)
+        assert_eq!(actual, expected)
     }
 
     #[test]
     fn test_seat_location_bytes() {
-        let seat = Seat::from("FBFBBFFRLR".as_bytes());
+        let expected = Seat::from("FBFBBFFRLR".as_bytes());
         let actual = Seat { row: 44, col: 5 };
-        assert_eq!(seat, actual)
+        assert_eq!(actual, expected)
     }
 
     #[test]
-    fn correct_solutions() {
+    fn verify() {
         let solver = super::Solver::new();
         let input = include_str!("../../input/day05.txt");
 
         let actual: Solution = (919, 642).into();
         let expected = solver.solve(input);
 
-        assert_eq!(expected, actual)
+        assert_eq!(actual, expected)
     }
 }

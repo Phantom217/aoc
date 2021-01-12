@@ -162,7 +162,7 @@ mem[8] = 0";
             Op::Mem(7, 101),
             Op::Mem(8, 0),
         ];
-        assert_eq!(expected, actual)
+        assert_eq!(actual, expected)
     }
 
     #[test]
@@ -187,7 +187,7 @@ mem[26] = 1";
     }
 
     #[test]
-    fn correct_solution() {
+    fn verify() {
         let solver = super::Solver::new();
         let input = include_str!("../../input/day14.txt");
 

@@ -119,16 +119,10 @@ mod test {
     }
 
     #[test]
-    fn solution_part1() {
-        let expected = 1_018_336.to_string();
+    fn verify() {
         let actual = helper();
-        assert_eq!(expected, actual.part1())
-    }
+        let expected: Solution = (1_018_336, 288_756_720).into();
 
-    #[test]
-    fn solution_part2() {
-        let expected = 288_756_720.to_string();
-        let actual = helper();
-        assert_eq!(expected, actual.part2())
+        assert_eq!(actual, expected)
     }
 }

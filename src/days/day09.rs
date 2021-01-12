@@ -137,8 +137,9 @@ mod test {
             .map(|n| n.parse::<usize>().expect("Invalid number"))
             .collect::<Vec<usize>>();
 
+        let expected = 127;
         let actual = find_anomaly(&numbers, 5);
-        assert_eq!(actual, 127)
+        assert_eq!(actual, expected)
     }
 
     #[test]
@@ -148,12 +149,13 @@ mod test {
             .map(|n| n.parse::<usize>().expect("Invalid number"))
             .collect::<Vec<usize>>();
 
+        let expected = 62;
         let actual = find_contiguous_sum(numbers, 127);
-        assert_eq!(actual, 62)
+        assert_eq!(actual, expected)
     }
 
     #[test]
-    fn correct_solution() {
+    fn verify() {
         let input = include_str!("../../input/day09.txt");
         let solver = super::Solver::new();
 

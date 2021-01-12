@@ -167,16 +167,13 @@ mod test {
     }
 
     #[test]
-    fn correct_solution() {
-        let expected: Solution = (569, 346).into();
-
+    fn verify() {
+        let solver = super::Solver::new();
         let input = include_str!("../../input/day02.txt");
 
-        let part1 = part1(input);
-        let part2 = part2(input);
+        let expected: Solution = (569, 346).into();
+        let actual = solver.solve(input);
 
-        let actual: Solution = (part1, part2).into();
-
-        assert_eq!(expected, actual)
+        assert_eq!(actual, expected)
     }
 }

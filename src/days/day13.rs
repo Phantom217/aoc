@@ -140,7 +140,7 @@ mod test {
     }
 
     #[test]
-    fn correct_solution() {
+    fn verify() {
         let solver = super::Solver::new();
         let input = include_str!("../../input/day13.txt");
 

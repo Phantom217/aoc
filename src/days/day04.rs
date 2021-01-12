@@ -156,21 +156,12 @@ iyr:2011 ecl:brn hgt:59in
     }
 
     #[test]
-    fn solution_part1() {
-        let input = parse(include_str!("../../input/day04.txt"));
+    fn verify() {
+        let solver = super::Solver::new();
+        let input = include_str!("../../input/day04.txt");
 
-        let expected = 222;
-        let actual = part1(&input);
-
-        assert_eq!(actual, expected)
-    }
-
-    #[test]
-    fn solution_part2() {
-        let input = parse(include_str!("../../input/day04.txt"));
-
-        let expected = 140;
-        let actual = part2(&input);
+        let expected: Solution = (222, 140).into();
+        let actual = solver.solve(input);
 
         assert_eq!(actual, expected)
     }
