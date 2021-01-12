@@ -97,11 +97,11 @@ fn part2(ops: &[Op]) -> u64 {
                 for perm in 0..perms {
                     let mut reg = *reg | mask_1 as usize;
 
-                    for idx in 0..floating_bits.len() {
-                        if perm & (1 << idx) != 0 {
-                            reg |= 1 << floating_bits[idx];
+                    for (i, fb) in floating_bits.iter().enumerate() {
+                        if perm & (1 << i) != 0 {
+                            reg |= 1 << fb;
                         } else {
-                            reg &= !(1 << floating_bits[idx]);
+                            reg &= !(1 << fb);
                         }
                     }
                     *memory.entry(reg).or_default() = *val;

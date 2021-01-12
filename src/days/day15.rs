@@ -2,9 +2,6 @@ use std::collections::HashMap;
 
 use crate::solution::Solution;
 
-const PART_1_TARGET: u32 = 2020;
-const PART_2_TARGET: u32 = 30_000_000;
-
 pub(crate) struct Solver(());
 
 impl Solver {

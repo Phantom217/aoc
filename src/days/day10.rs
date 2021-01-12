@@ -38,13 +38,13 @@ fn get_all_nodes(adapters: &mut Vec<u32>) {
     adapters.sort_unstable();
 }
 
-fn check_ones_threes(diff: u32, ones: &mut u32, threes: &mut u32) {
-    match diff {
-        1 => *ones += 1,
-        3 => *threes += 1,
-        _ => (),
-    }
-}
+// fn check_ones_threes(diff: u32, ones: &mut u32, threes: &mut u32) {
+//     match diff {
+//         1 => *ones += 1,
+//         3 => *threes += 1,
+//         _ => (),
+//     }
+// }
 
 fn part1(adapters: &[u32]) -> u32 {
     // let mut ones = 0;
