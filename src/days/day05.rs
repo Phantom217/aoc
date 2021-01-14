@@ -45,7 +45,7 @@ impl Seat {
     }
 }
 
-impl std::convert::From<&[u8]> for Seat {
+impl From<&[u8]> for Seat {
     /// Parses the input using the inverse of what the ASCII characters (`F`, `B`, `R`, `L`) represent.
     ///
     /// `F`, `L` are `1`
@@ -61,7 +61,7 @@ impl std::convert::From<&[u8]> for Seat {
     }
 }
 
-impl std::convert::From<&str> for Seat {
+impl From<&str> for Seat {
     /// Parses the input using the inverse of what the ASCII characters (`F`, `B`, `R`, `L`) represent.
     ///
     /// `F`, `L` are `1`

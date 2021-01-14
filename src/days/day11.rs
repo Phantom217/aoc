@@ -127,7 +127,7 @@ enum State {
     Occupied,
 }
 
-impl std::convert::From<char> for State {
+impl From<char> for State {
     fn from(c: char) -> Self {
         match c {
             '.' => Self::Floor,

@@ -93,7 +93,7 @@ impl<'r> Bags<'r> {
     }
 }
 
-impl<'r> std::convert::From<Vec<Rule<'r>>> for Bags<'r> {
+impl<'r> From<Vec<Rule<'r>>> for Bags<'r> {
     fn from(rules: Vec<Rule<'r>>) -> Self {
         let mut bags = Bags::new();
 
@@ -119,7 +119,7 @@ impl<'r> Rule<'r> {
     }
 }
 
-impl<'r> std::convert::From<&'r str> for Rule<'r> {
+impl<'r> From<&'r str> for Rule<'r> {
     fn from(rule: &'r str) -> Self {
         let rule: Vec<_> = rule.split("bags contain").map(|s| s.trim()).collect();
         let container = rule[0];

@@ -92,7 +92,7 @@ enum Op {
     Nop(i32),
 }
 
-impl std::convert::From<&str> for Op {
+impl From<&str> for Op {
     fn from(instruction: &str) -> Self {
         let instruction = instruction.split(' ').collect::<Vec<_>>();
         let op = instruction[0];

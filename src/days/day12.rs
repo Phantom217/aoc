@@ -156,7 +156,7 @@ enum Action {
     F(u32),
 }
 
-impl std::convert::From<&str> for Action {
+impl From<&str> for Action {
     fn from(a: &str) -> Self {
         let mut iter = a.chars();
         let action = iter.next().unwrap();

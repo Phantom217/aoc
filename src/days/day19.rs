@@ -124,7 +124,7 @@ impl<'a> Rule<'a> {
     }
 }
 
-impl<'r, 's: 'r> std::convert::From<&'s str> for Rule<'r> {
+impl<'r, 's: 'r> From<&'s str> for Rule<'r> {
     fn from(rule: &'s str) -> Self {
         if rule.starts_with('"') {
             let terminal = rule.strip_prefix('"').unwrap().strip_suffix('"').unwrap();

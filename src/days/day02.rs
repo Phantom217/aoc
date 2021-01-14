@@ -60,7 +60,7 @@ impl PasswordRules {
     }
 }
 
-impl std::convert::From<&str> for PasswordRules {
+impl From<&str> for PasswordRules {
     fn from(rule: &str) -> Self {
         let pr = rule.split(['-', ':', ' '].as_ref()).collect::<Vec<&str>>();
         let min = pr[0].parse::<usize>().unwrap();

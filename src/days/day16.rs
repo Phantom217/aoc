@@ -113,7 +113,7 @@ struct Notes<'n> {
     nearby: Vec<Vec<u16>>,
 }
 
-impl<'n> std::convert::From<&'n str> for Notes<'n> {
+impl<'n> From<&'n str> for Notes<'n> {
     fn from(input: &'n str) -> Self {
         let mut input = input.split("\n\n");
 

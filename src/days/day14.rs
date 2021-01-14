@@ -33,7 +33,7 @@ enum Op {
     Mem(usize, u64),
 }
 
-impl std::convert::From<&str> for Op {
+impl From<&str> for Op {
     fn from(line: &str) -> Self {
         match &line[..3] {
             "mem" => {
