@@ -208,84 +208,84 @@ mod test {
     ];
 
     #[test]
-    fn example_1_part1() {
+    fn example_part1_1() {
         let expected = 71;
         let actual = part1(EXPRESSION[0]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_2_part1() {
+    fn example_part1_2() {
         let expected = 51;
         let actual = part1(EXPRESSION[1]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_3_part1() {
+    fn example_part1_3() {
         let expected = 26;
         let actual = part1(EXPRESSION[2]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_4_part1() {
+    fn example_part1_4() {
         let expected = 437;
         let actual = part1(EXPRESSION[3]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_5_part1() {
+    fn example_part1_5() {
         let expected = 12_240;
         let actual = part1(EXPRESSION[4]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_6_part1() {
+    fn example_part1_6() {
         let expected = 13_632;
         let actual = part1(EXPRESSION[5]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_1_part2() {
+    fn example_part2_1() {
         let expected = 231;
         let actual = part2(EXPRESSION[0]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_2_part2() {
+    fn example_part2_2() {
         let expected = 51;
         let actual = part2(EXPRESSION[1]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_3_part2() {
+    fn example_part2_3() {
         let expected = 46;
         let actual = part2(EXPRESSION[2]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_4_part2() {
+    fn example_part2_4() {
         let expected = 1445;
         let actual = part2(EXPRESSION[3]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_5_part2() {
+    fn example_part2_5() {
         let expected = 669_060;
         let actual = part2(EXPRESSION[4]);
         assert_eq!(actual, expected)
     }
 
     #[test]
-    fn example_6_part2() {
+    fn example_part2_6() {
         let expected = 23_340;
         let actual = part2(EXPRESSION[5]);
         assert_eq!(actual, expected)
